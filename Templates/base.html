@@ -7,49 +7,28 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
 
-      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
         <a class="me-3 py-2 text-dark text-decoration-none" href="/">Home page</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="/about">About</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="/posts">Articles</a>
-        <a class="btn btn-warning" href="/create-article">Create article</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="/courses">BISB courses</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="/faculty">Faculty</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="/read-feedback">Read feedback</a>
+        <a class="btn btn-warning" href="/write-feedback">Leave a feedback</a>
       </nav>
     </div>
 
     {% block body %}{% endblock %}
 
-    <footer class="container pt-4 my-md-5 pt-md-5 border-top">
-    <div class="row">
-      <div class="col-12 col-md">
-        <small class="d-block mb-3 text-muted">Yuriy Kim diploma project summer 2022.</small>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Tech stack:</h5>
-        <ul class="list-unstyled text-small">
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://flask.palletsprojects.com/en/2.1.x/">Flask</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://www.sqlalchemy.org/">SQLAlchemy</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://www.sqlite.org/index.html">SQLite</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://getbootstrap.com/">Bootstrap</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Python and IDE:</h5>
-        <ul class="list-unstyled text-small">
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://www.python.org/downloads/">Python</a></li>
-          <li
-                  class="mb-1"><a class="link-secondary text-decoration-none" href="https://www.jetbrains.com/ru-ru/pycharm/download/#section=windows">PyCharm
-            Community edition</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>About me</h5>
-        <ul class="list-unstyled text-small">
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://my.kimep.kz/Default.aspx?ReturnUrl=%2f">My university</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="https://github.com/Vanoficecream">My GitHub</a></li>
-        </ul>
-      </div>
-    </div>
+    <footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+      <li class="nav-item"><a href="https://www.kimep.kz/en/" class="nav-link px-2 text-muted">KIMEP.</a></li>
+      <li class="nav-item"><a href="https://www.kimep.kz/bang-college-of-business/en/" class="nav-link px-2 text-muted">Bang College of Business.</a></li>
+      <li class="nav-item"><a href="https://www.kimep.kz/college-of-social-sciences/en/" class="nav-link px-2 text-muted">College of Social Science.</a></li>
+      <li class="nav-item"><a href="https://www.kimep.kz/school-of-law/en/" class="nav-link px-2 text-muted">Law School.</a></li>
+      <li class="nav-item"><a href="https://www.kimep.kz/college-humanities-education/en/" class="nav-link px-2 text-muted">College of Humanities and Education.</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2022 KIMEP University.</p>
   </footer>
 </body>
 </html>

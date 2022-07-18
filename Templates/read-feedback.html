@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Feedback
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Read feedback.</h1><br>
+
+    {% if articles|length > 0 %}
+        {% for element in articles %}
+        <div class="alert alert-info">
+            <h2>{{ element.title }}</h2>
+            <p>{{ element.introduction }}</p>
+            <p>{{ element.main_text }}</p>
+            <p><b>Date: {{ element.date.date() }}</b></p>
+            <a href="/read-feedback/{{ element.id }}" class="btn btn-warning">More details</a>
+        </div>
+        {% endfor %}
+    {% else %}
+    <p>No one has written feedback yet, be the first one!</p>
+    {% endif %}
+
+</div>
+{% endblock %}
