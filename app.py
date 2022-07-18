@@ -7,13 +7,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-"""Create class, 4 columns: id, title, introductory, text, """
-"""1) The id of the article must be unique for that we use primary_key=True."""
-"""2) The max length of title part is 100, also we apply nullable=False so our title can't be null."""
-"""3) The max length of introductory part is 300, also we apply nullable=False so our intro part can't be null."""
-"""4) Create the main text column with datatype - Text."""
-"""5) Import datetime library to implement a function that allow us to see what time and date the article was created."""
-
 
 class Article(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -26,62 +19,57 @@ class Article(db.Model):
         return '<Article %r>' % self.id
 
 
-"""Access main page"""
-"""Access also home page"""
-
-
 @app.route('/')
 @app.route('/home')
 def index():
     return render_template("index.html")
 
 
-"""Access page - about"""
+@app.route('/faculty')
+def faculty():
+    return render_template("faculty.html")
 
 
-@app.route('/about')
-def about():
-    return render_template("about.html")
+@app.route('/courses')
+def courses():
+    return render_template("courses.html")
 
 
-"""Read the articles from our database"""
-
-
-@app.route('/posts')
-def posts():
+@app.route('/read-feedback')
+def read_feedback():
     articles = Article.query.order_by(Article.date.desc()).all()
-    return render_template("posts.html", articles=articles)
+    return render_template("read-feedback.html", articles=articles)
 
 
-"""Create an page for each article's details that allow us to click on each article with unique url like - /posts/1"""
+"""Create an page for each feedback's details that allow us to click on each article with unique url like - /read-feedback/1"""
 
 
-@app.route('/posts/<int:id>')
-def post_details(id):
+@app.route('/read-feedback/<int:id>')
+def feedback_details(id):
     article = Article.query.get(id)
-    return render_template("post_details.html", article=article)
+    return render_template("feedback_details.html", article=article)
 
 
-"""Create a button that allow us to delete any article from our database."""
+"""Create a button that allow us to delete any feedback from our database."""
 
 
-@app.route('/posts/<int:id>/delete')
-def post_delete(id):
+@app.route('/read-feedback/<int:id>/delete')
+def feedback_delete(id):
     article = Article.query.get_or_404(id)
 
     try:
         db.session.delete(article)
         db.session.commit()
-        return redirect("/posts")
+        return redirect("/read-feedback")
     except TypeError:
         return "An error occurred during the process of deleting of an article."
 
 
-"""Add to our create-article page methods in order that our create-article page can receive some data."""
+"""Add to our write-feedback page methods in order that our write-feedback page can receive some data."""
 
 
-@app.route('/create-article', methods=['POST', 'GET'])
-def create_article():
+@app.route('/write-feedback', methods=['POST', 'GET'])
+def write_feedback():
     if request.method == "POST":
         title = request.form['title']
         introduction = request.form['introduction']
@@ -92,18 +80,18 @@ def create_article():
         try:
             db.session.add(article)
             db.session.commit()
-            return redirect('/posts')
+            return redirect('/read-feedback')
         except TypeError:
             return "An error occurred during the process of adding new article."
     else:
-        return render_template("create-article.html")
+        return render_template("write-feedback.html")
 
 
 """If we want to update our article we need to create this new page with updates."""
 
 
-@app.route('/posts/<int:id>/update', methods=['POST', 'GET'])
-def post_update(id):
+@app.route('/read-feedback/<int:id>/update', methods=['POST', 'GET'])
+def feedback_update(id):
     article = Article.query.get_or_404(id)
     if request.method == "POST":
         article.title = request.form['title']
@@ -112,11 +100,11 @@ def post_update(id):
 
         try:
             db.session.commit()
-            return redirect('/posts')
+            return redirect('/read-feedback')
         except TypeError:
             return "An error occurred during the process of updating of an article."
     else:
-        return render_template("post_update.html", article=article)
+        return render_template("feedback_update.html", article=article)
 
 
 if __name__ == "__main__":
