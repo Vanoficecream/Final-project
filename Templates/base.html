@@ -4,31 +4,40 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
 
-    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
-        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a class="me-3 py-2 text-dark text-decoration-none" href="/">Home page</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="/courses">BISB courses</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="/faculty">Faculty</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="/read-feedback">Read feedback</a>
-        <a class="btn btn-warning" href="/write-feedback">Leave a feedback</a>
-      </nav>
-    </div>
+   <div class="container-fluid">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="/courses" class="nav-link">BISB Courses</a></li>
+        <li class="nav-item"><a href="/faculty" class="nav-link">Faculty</a></li>
+        <li class="nav-item"><a href="/read-feedback" class="nav-link">Feedback</a></li>
+        <li class="nav-item"><a href="/write-feedback" class="nav-link">Leave a feedback</a></li>
+      </ul>
+    </header>
+  </div>
 
     {% block body %}{% endblock %}
 
-    <footer class="py-3 my-4">
+      <footer class="py-3 my-4">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="https://www.kimep.kz/en/" class="nav-link px-2 text-muted">KIMEP.</a></li>
-      <li class="nav-item"><a href="https://www.kimep.kz/bang-college-of-business/en/" class="nav-link px-2 text-muted">Bang College of Business.</a></li>
-      <li class="nav-item"><a href="https://www.kimep.kz/college-of-social-sciences/en/" class="nav-link px-2 text-muted">College of Social Science.</a></li>
-      <li class="nav-item"><a href="https://www.kimep.kz/school-of-law/en/" class="nav-link px-2 text-muted">Law School.</a></li>
-      <li class="nav-item"><a href="https://www.kimep.kz/college-humanities-education/en/" class="nav-link px-2 text-muted">College of Humanities and Education.</a></li>
+      <li class="nav-item"><a href="https://www.kimep.kz/en/" class="nav-link px-2 text-muted" target="_blank" rel="noopener noreferrer">KIMEP</a></li>
+      <li class="nav-item"><a href="https://www.kimep.kz/prospective-students/en/bachelor/" class="nav-link px-2 text-muted" target="_blank" rel="noopener noreferrer">Bachelor</a></li>
+      <li class="nav-item"><a href="https://www.kimep.kz/prospective-students/en/master/" class="nav-link px-2 text-muted" target="_blank" rel="noopener noreferrer">Master</a></li>
+      <li class="nav-item"><a href="https://www.kimep.kz/prospective-students/en/phd/" class="nav-link px-2 text-muted" target="_blank" rel="noopener noreferrer">PHD</a></li>
+      <li class="nav-item"><a href="https://www.kimep.kz/prospective-students/en/admission/" class="nav-link px-2 text-muted" target="_blank" rel="noopener noreferrer">Apply now!</a></li>
     </ul>
     <p class="text-center text-muted">© 2022 KIMEP University.</p>
   </footer>
+
 </body>
 </html>

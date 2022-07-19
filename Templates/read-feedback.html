@@ -11,7 +11,7 @@ Feedback
     {% if articles|length > 0 %}
         {% for element in articles %}
         <div class="alert alert-info">
-            <h2>{{ element.title }}</h2>
+            <h3>{{ element.title }}</h3>
             <p>{{ element.introduction }}</p>
             <p>{{ element.main_text }}</p>
             <p><b>Date: {{ element.date.date() }}</b></p>
