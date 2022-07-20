@@ -7,38 +7,82 @@ Faculty
 {% block body %}
 
 <div class="container">
-<h2>Meet our faculty:</h2><br>
-        <table class="table table-bordered table-hov">
-            <thead>
-            <tr>
-                <th>Name:</th>
-                <th>Degree:</th>
-                <th>Position:</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Uldana Baizyldaeva</td>
-                <td>PHD</td>
-                <td>Assistant professor, Information Systems in Business</td>
-            </tr>
-            <tr>
-                <td>Umut Tosun</td>
-                <td>PHD</td>
-                <td>Assistant professor, Information Systems in Business</td>
-            </tr>
-            <tr>
-                <td>Oleg Vlasov</td>
-                <td>MBA</td>
-                <td>Senior Lecturer, Information Systems in Business</td>
-            </tr>
-            <tr>
-                <td>Yevgenia Kim</td>
-                <td>MBA</td>
-                <td>Senior Lecturer, Information Systems in Business</td>
-            </tr>
-            </tbody>
-        </table>
+    <h2>Meet our faculty:</h2><br>
+    <div class="row">
+        <div class="col-md-3">
+          <div class="card shadow-sm">
+              <img src="/static/images/U_B_150x150.jpg"><br>
+              <div class="card-body">
+              <h5 style="text-align: left">Uldana Baizyldaeva, PHD</h5>
+              <p class="card-text">Assistant professor, Information Systems in Business.</p>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Details</button>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Email: bdana@kimep.kz</a></li>
+                      <li><a class="dropdown-item" href="#">Office 2075</a></li>
+                  </ul>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card shadow-sm">
+              <img src="/static/images/U_T_150x150.jpeg"><br>
+              <div class="card-body">
+              <h5 style="text-align: left">Umut Tosun, PHD</h5>
+              <p class="card-text">Assistant professor, Information Systems in Business.</p>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Details</button>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Email: u.tosun@kimep.kz</a></li>
+                  </ul>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card shadow-sm">
+              <img src="/static/images/O_V_150x150.jpg"><br>
+              <div class="card-body">
+              <h5 style="text-align: left">Oleg Vlasov, MBA</h5>
+              <p class="card-text">Senior Lecturer, Information Systems in Business.</p>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Details</button>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">050010, 2 Abai ave., Almaty, KIMEP University.</a></li>
+                      <li><a class="dropdown-item" href="#">office: 418/adm.</a></li>
+                      <li><a class="dropdown-item" href="#">e-mail: olegvl@kimep.kz</a></li>
+                      <li><a class="dropdown-item" href="#">phone: (727) 270-44-40 ext. 2064</a></li>
+                  </ul>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card shadow-sm">
+              <img src="/static/images/Y_K_150x150.jpg"><br>
+              <div class="card-body">
+              <h5 style="text-align: left">Yevgenia Kim, MBA</h5>
+              <p class="card-text">Senior Lecturer, Information Systems in Business.</p>
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Details</button>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Tel: 270-44-40 Ext: 2017</a></li>
+                      <li><a class="dropdown-item" href="#">Office: 316 / Dostyk bld</a></li>
+                      <li><a class="dropdown-item" href="#">Email: ydk@kimep.kz</a></li>
+                  </ul>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
 </div>
 
 {% endblock %}
