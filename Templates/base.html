@@ -15,17 +15,21 @@
 </head>
 <body>
 
-   <div class="container-fluid">
-    <header class="d-flex justify-content-center py-3">
-      <ul class="nav nav-pills">
-        <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="/courses" class="nav-link">BISB Courses</a></li>
-        <li class="nav-item"><a href="/faculty" class="nav-link">Faculty</a></li>
-        <li class="nav-item"><a href="/read-feedback" class="nav-link">Feedback history</a></li>
-        <li class="nav-item"><a href="/write-feedback" class="nav-link">Leave a feedback</a></li>
+<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      </a>
+
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="/" class="nav-link px-2 link-secondary">Home</a></li>
+        <li><a href="/courses" class="nav-link px-2 link-dark">BISB courses</a></li>
+        <li><a href="/faculty" class="nav-link px-2 link-dark">Faculty</a></li>
+        <li><a href="/read-feedback" class="nav-link px-2 link-dark">Feedback history</a></li>
+        <li><a href="/write-feedback" class="nav-link px-2 link-dark">Leave a feedback</a></li>
       </ul>
-    </header>
-  </div>
+
+      <div class="col-md-3 text-end">
+      </div>
+</header>
 
 
     {% block body %}{% endblock %}
